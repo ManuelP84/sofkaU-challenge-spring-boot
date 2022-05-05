@@ -15,5 +15,7 @@ public class Note {
 
     private String title;
 
+    private Boolean done;
+
     private Long fkCategoryId;
 }
