@@ -30,8 +30,8 @@ public class CategoryNoteService {
         return categoryNoteService.updateNote(note);
     }
 
-    public void deleteNote(Note note){
-        categoryNoteService.deleteNote(note);
+    public void deleteNote(Long id){
+        categoryNoteService.deleteNote(id);
     }
 
     public void deleteCategory(Long id){

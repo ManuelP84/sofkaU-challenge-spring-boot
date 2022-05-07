@@ -15,7 +15,7 @@ public interface CategoryNoteDao {
 
     Note updateNote(Note note);
 
-    void deleteNote(Note note);
+    void deleteNote(Long id);
 
     void deleteCategory(Long id);
 }
