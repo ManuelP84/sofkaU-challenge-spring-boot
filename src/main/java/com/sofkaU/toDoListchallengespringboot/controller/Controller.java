@@ -32,7 +32,7 @@ public class Controller {
     }
 
     @PutMapping("update/note")
-    public Category updateNote(@RequestBody Note note){
+    public Note updateNote(@RequestBody Note note){
         return service.updateNote(note);
     }
 

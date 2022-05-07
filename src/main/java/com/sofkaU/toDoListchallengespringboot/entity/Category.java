@@ -28,7 +28,7 @@ public class Category {
      */
     public Category addNote(Note note) {
         this.notes.add(note);
-
         return this;
     }
+
 }
