@@ -50,11 +50,11 @@ public class CategoryNoteDaoImplement implements CategoryNoteDao{
     }
 
     @Override
-    public void deleteCategory(Category category) {
-        Category categoryToBeDeleted = categoryRepository.findById(category.getId()).get();
+    public void deleteCategory(Long id) {
+        Category categoryToBeDeleted = categoryRepository.findById(id).get();
         if(categoryToBeDeleted.getNotes().size() > 0){
             categoryToBeDeleted.getNotes().forEach(note -> noteRepository.deleteById(note.getId()));
         }
-        categoryRepository.deleteById(category.getId());
+        categoryRepository.deleteById(id);
     }
 }

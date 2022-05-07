@@ -17,5 +17,5 @@ public interface CategoryNoteDao {
 
     void deleteNote(Note note);
 
-    void deleteCategory(Category category);
+    void deleteCategory(Long id);
 }

@@ -36,9 +36,9 @@ public class Controller {
         return service.updateNote(note);
     }
 
-    @DeleteMapping("delete/category")
-    public void deleteCategory(@RequestBody Category category){
-        service.deleteCategory(category);
+    @DeleteMapping("delete/category/{id}")
+    public void deleteCategory(@PathVariable Long id){
+        service.deleteCategory(id);
     }
 
     @DeleteMapping("delete/note")

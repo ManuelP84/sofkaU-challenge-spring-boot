@@ -34,7 +34,7 @@ public class CategoryNoteService {
         categoryNoteService.deleteNote(note);
     }
 
-    public void deleteCategory(Category category){
-        categoryNoteService.deleteCategory(category);
+    public void deleteCategory(Long id){
+        categoryNoteService.deleteCategory(id);
     }
 }
