@@ -11,7 +11,7 @@ public interface CategoryNoteDao {
 
     Category createCategory(Category category);
 
-    Category createNote(Note note);
+    Note createNote(Note note);
 
     Note updateNote(Note note);
 

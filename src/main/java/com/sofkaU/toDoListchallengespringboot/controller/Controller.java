@@ -27,7 +27,7 @@ public class Controller {
     }
 
     @PostMapping("create/note")
-    public Category createNote(@RequestBody Note note){
+    public Note createNote(@RequestBody Note note){
         return service.createNote(note);
     }
 

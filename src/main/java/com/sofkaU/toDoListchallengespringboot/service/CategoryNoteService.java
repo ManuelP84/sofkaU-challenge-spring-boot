@@ -22,7 +22,7 @@ public class CategoryNoteService {
         return categoryNoteService.createCategory(category);
     }
 
-    public Category createNote(Note note){
+    public Note createNote(Note note){
         return categoryNoteService.createNote(note);
     }
 

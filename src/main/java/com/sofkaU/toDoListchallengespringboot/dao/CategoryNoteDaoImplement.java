@@ -30,12 +30,13 @@ public class CategoryNoteDaoImplement implements CategoryNoteDao{
     }
 
     @Override
-    public Category createNote(Note note) {
+    public Note createNote(Note note) {
         Long categoryId = note.getFkCategoryId();
         Category category = categoryRepository.findById(categoryId).get();
         category.addNote(note);
-        noteRepository.save(note);
-        return categoryRepository.save(category);
+        categoryRepository.save(category);
+
+        return noteRepository.save(note);
     }
 
     @Override
