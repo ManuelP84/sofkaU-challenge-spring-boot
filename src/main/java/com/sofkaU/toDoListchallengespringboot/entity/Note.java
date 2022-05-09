@@ -19,6 +19,6 @@ public class Note {
 
     private Boolean done;
 
-    @NotEmpty
+    //@NotEmpty
     private Long fkCategoryId;
 }
