@@ -24,18 +24,18 @@ public class Controller {
     }
 
     @PostMapping("create/category")
-    public Category createCategory(@RequestBody CategoryDto categoryDto){
+    public CategoryDto createCategory(@RequestBody CategoryDto categoryDto){
         return service.createCategory(categoryDto);
     }
 
     @PostMapping("create/note")
-    public Note createNote(@RequestBody NoteDto noteDto){
+    public NoteDto createNote(@RequestBody NoteDto noteDto){
         return service.createNote(noteDto);
     }
 
     @PutMapping("update/note")
-    public Note updateNote(@RequestBody Note note){
-        return service.updateNote(note);
+    public NoteDto updateNote(@RequestBody NoteDto noteDto){
+        return service.updateNote(noteDto);
     }
 
     @DeleteMapping("delete/category/{id}")

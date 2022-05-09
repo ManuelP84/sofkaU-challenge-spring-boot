@@ -11,11 +11,11 @@ public interface CategoryNoteService {
 
     List<CategoryDto> getCategories();
 
-    Category createCategory(CategoryDto categoryDto);
+    CategoryDto createCategory(CategoryDto categoryDto);
 
-    Note createNote(NoteDto noteDto);
+    NoteDto createNote(NoteDto noteDto);
 
-    Note updateNote(Note note);
+    NoteDto updateNote(NoteDto noteDto);
 
     void deleteNote(Long id);
 

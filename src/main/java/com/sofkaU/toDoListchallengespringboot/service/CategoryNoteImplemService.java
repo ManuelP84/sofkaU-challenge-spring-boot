@@ -33,26 +33,29 @@ public class CategoryNoteImplemService implements CategoryNoteService {
     }
 
     @Override
-    public Category createCategory(CategoryDto categoryDto) {
-        Category category;
-        category = convertDtoToCategory(categoryDto);
-        return categoryRepository.save(category);
+    public CategoryDto createCategory(CategoryDto categoryDto) {
+        Category category = convertDtoToCategory(categoryDto);
+        categoryRepository.save(category);
+        return categoryDto;
     }
 
     @Override
-    public Note createNote(NoteDto noteDto) {
+    public NoteDto createNote(NoteDto noteDto) {
         Note note;
         note = convertDtoToNote(noteDto);
         Long categoryId = note.getFkCategoryId();
         Category category = categoryRepository.findById(categoryId).get();
         category.addNote(note);
-        //categoryRepository.save(category);
-        return noteRepository.save(note);
+        noteRepository.save(note);
+        return  noteDto;
     }
 
     @Override
-    public Note updateNote(Note note) {
-        return noteRepository.save(note);
+    public NoteDto updateNote(NoteDto noteDto) {
+        Note note;
+        note = convertDtoToNote(noteDto);
+        noteRepository.save(note);
+        return  noteDto;
     }
 
     @Override
