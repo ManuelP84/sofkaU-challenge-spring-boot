@@ -1,5 +1,7 @@
 package com.sofkaU.toDoListchallengespringboot.controller;
 
+import com.sofkaU.toDoListchallengespringboot.dto.CategoryDto;
+import com.sofkaU.toDoListchallengespringboot.dto.NoteDto;
 import com.sofkaU.toDoListchallengespringboot.entity.Category;
 import com.sofkaU.toDoListchallengespringboot.entity.Note;
 import com.sofkaU.toDoListchallengespringboot.service.CategoryNoteService;
@@ -17,18 +19,18 @@ public class Controller {
     private CategoryNoteService service;
 
     @GetMapping("get/categories")
-    public List<Category> getAllCategories(){
+    public List<CategoryDto> getAllCategories(){
         return service.getCategories();
     }
 
     @PostMapping("create/category")
-    public Category createCategory(@RequestBody Category category){
-        return service.createCategory(category);
+    public Category createCategory(@RequestBody CategoryDto categoryDto){
+        return service.createCategory(categoryDto);
     }
 
     @PostMapping("create/note")
-    public Note createNote(@RequestBody Note note){
-        return service.createNote(note);
+    public Note createNote(@RequestBody NoteDto noteDto){
+        return service.createNote(noteDto);
     }
 
     @PutMapping("update/note")

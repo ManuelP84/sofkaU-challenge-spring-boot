@@ -1,40 +1,24 @@
 package com.sofkaU.toDoListchallengespringboot.service;
 
-import com.sofkaU.toDoListchallengespringboot.dao.CategoryNoteDaoImplement;
+import com.sofkaU.toDoListchallengespringboot.dto.CategoryDto;
+import com.sofkaU.toDoListchallengespringboot.dto.NoteDto;
 import com.sofkaU.toDoListchallengespringboot.entity.Category;
 import com.sofkaU.toDoListchallengespringboot.entity.Note;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
-public class CategoryNoteService {
+public interface CategoryNoteService {
 
-    @Autowired
-    private CategoryNoteDaoImplement categoryNoteService;
+    List<CategoryDto> getCategories();
 
-    public List<Category> getCategories(){
-        return categoryNoteService.getCategories();
-    }
+    Category createCategory(CategoryDto categoryDto);
 
-    public Category createCategory(Category category){
-        return categoryNoteService.createCategory(category);
-    }
+    Note createNote(NoteDto noteDto);
 
-    public Note createNote(Note note){
-        return categoryNoteService.createNote(note);
-    }
+    Note updateNote(Note note);
 
-    public Note updateNote(Note note){
-        return categoryNoteService.updateNote(note);
-    }
+    void deleteNote(Long id);
 
-    public void deleteNote(Long id){
-        categoryNoteService.deleteNote(id);
-    }
+    void deleteCategory(Long id);
 
-    public void deleteCategory(Long id){
-        categoryNoteService.deleteCategory(id);
-    }
 }
